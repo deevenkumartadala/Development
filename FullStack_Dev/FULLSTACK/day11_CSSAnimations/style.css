@@ -1,0 +1,159 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+header{
+    background:#1e293b;
+    color:white;
+    padding:20px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    min-height:calc(100vh - 80px);
+}
+
+.sidebar{
+    background: #334155;
+    color:white;
+    padding:20px;
+}
+
+.main-content{
+    padding:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(100px,1fr));
+    gap:25px;
+}
+
+.card{
+    background: white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.load{
+    display: inline;
+    display: flex;
+    margin:20px;
+}
+
+.card:hover{
+    transform: translateY(-8px) scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0 ,0.15);
+    
+}
+
+.loading-spinner{
+    width:20px;
+    height:20px;
+    border:5px solid #cbd5e1;
+    border-top:5px solid #2563eb;
+    border-radius:50%;
+    animation:loader 2s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+
+    transition:background-color 0.3s ease,
+               transform 0.3s ease;
+}
+
+button:hover{
+    background: #1d4ed8;
+    transform: translateY(-4px) scale(1.05);
+}
+
+.load:hover .loading-spinner{
+    opacity: 1;
+}
+
+.loader{
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    border:5px solid #cbd5e1;
+    border-top:5px solid #2563eb;
+    animation: spin 3s linear infinite;
+}
+
+.activity{
+    width:200px;
+    background:blue;
+    padding:25px;
+    margin-top: 25px;
+    border-radius:10px;
+    color:#f1f5f9;
+
+    animation: box 5s linear infinite alternate;
+}
+
+
+
+@media (max-width: 700px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes spin {
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes box {
+    0% {
+        transform: translateX(0);
+        background: blue;
+    }
+
+    50% {
+        transform: translateX(200px);
+        background: red;
+    }
+
+    100% {
+        transform: translateX(0);
+        background: blue;
+    }
+}
+
+@keyframes loader{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}

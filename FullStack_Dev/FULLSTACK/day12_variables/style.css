@@ -1,0 +1,164 @@
+/*====================
+  1.CSS variables
+  ====================*/
+:root{
+    --primary-color:#2563eb;
+    --secondary-color:#334155;
+    --background-color:#f1f5f9;
+    --surface-color:#ffffff;
+    --text-color:#1e293b;
+    --text-color-secondary:#fff4f8;
+
+    --spacing-small:8px;
+    --spacing-medium:16px;
+    --spacing-large:24px;
+
+    --border-radius:10px;
+    --card-shadow:0 2px 8px rgba(0, 0, 0, 0.1);
+    --card-hover-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/*=========================
+  2.Reset and Global styles
+  =========================*/
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:var(--background-color);
+    color:var(--text-color);
+}
+
+/*===========
+  3.Header
+  ===========*/
+.dashboard-header{
+    background:#1e293b;
+    color:var(--text-color-secondary);
+    padding:var(--spacing-medium);
+}
+
+/*==================
+  4.Dashboard Layout
+  ==================*/
+.dashboard-content{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    min-height:calc(100vh - 80px);
+}
+
+/*=============
+  5.Sidebar
+  =============*/
+.dashboard-sidebar{
+    background: var(--secondary-color);
+    color:var(--text-color-secondary);
+    padding:var(--spacing-medium);
+}
+
+/*===========
+  6.Cards
+  ===========*/
+.dashboard-main{
+    padding:var(--spacing-medium);
+}
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(100px,1fr));
+    gap:var(--spacing-large);
+}
+
+.dashboard-card{
+    background: var(--surface-color);
+    padding:var(--spacing-large);
+    border-radius:var(--border-radius);
+    box-shadow:var(--card-shadow);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.dashboard-card:hover{
+    transform: translateY(-8px) scale(1.05) rotate(2deg);
+    box-shadow: var(--card-hover-shadow);
+    
+}
+
+/*============
+  7.Buttons
+  ============*/
+button{
+    background:var(--primary-color);
+    color:var(--text-color-secondary);
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+
+    transition:background-color 0.3s ease,
+               transform 0.3s ease;
+}
+
+button:hover{
+    background: #1d4ed8;
+    transform: translateY(-4px) scale(1.05);
+}
+
+
+
+.dashboard-activity{
+    width:200px;
+    background:var(--primary-color);
+    padding:var(--spacing-large);
+    margin-top: var(--spacing-large);
+    border-radius:var(--border-radius);
+    color:var(--text-color-secondary);
+
+    animation: box 5s linear infinite alternate;
+}
+
+/*============
+  8.Animations
+  ============*/
+@keyframes box {
+    0% {
+        transform: translateX(0);
+        background: blue;
+    }
+
+    50% {
+        transform: translateX(200px);
+        background: red;
+    }
+
+    100% {
+        transform: translateX(0);
+        background: blue;
+    }
+}
+
+/*====================
+  9.Responsive Design
+  ====================*/
+@media (max-width: 700px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*==============
+  10.Dark Theme
+  ==============*/
+.dark-theme{
+    --background-color: black;
+    --text-color:white;
+    --surface-color:#1e293b;
+    --secondary-color:#ff9696;
+}

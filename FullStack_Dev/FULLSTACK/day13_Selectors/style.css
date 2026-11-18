@@ -1,0 +1,215 @@
+/*1.Variables*/
+:root{
+    --main-background:#ffffff;
+    --header-background:#1e293b;
+    --nav-background:#334155;
+    --content-background:#f1f5f9;
+    --card-background:#ffffff;
+    --button-background:#2563eb;
+    --button-hover-background:#1d4ed8;
+    --primary-text:#1e293b;
+    --seconday-text:white;
+
+    --spacing-small:12px;
+    --spacing-medium:20px;
+    --spacing-large:24px;
+
+    --border-radius-small:6px;
+    --border-radius-medium:12px;
+    --border-radius-large:16px;
+
+    --shadow-small:0 2px 8px rgba(0,0,0,0.1);
+    --shadow-medium:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/*2.Universal Reset*/
+*{
+    box-sizing: border-box;
+}
+
+/*3.body*/
+body{
+    background: var(--main-background);
+    color:var(--primary-text);
+    margin: 0;
+    font-family: Arial,sans-serif;
+    line-height: auto;
+}
+
+/*4.Header*/
+.dashboard-header{
+    background: var(--header-background);
+    color:var(--seconday-text);
+    padding:var(--spacing-medium);
+    font-size: clamp(24px 4vw 56px);
+}
+
+/*4.Dashboard Layout*/
+.dashboard{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    min-height:calc(100vh - 80px)
+}
+/*5.Sidebar*/
+.dashboard-sidebar{
+    background: var(--nav-background);
+    color:var(--seconday-text);
+    padding: var(--spacing-medium);
+}
+
+.dashboard-sidebar a{
+    display:block;
+    text-decoration:none;
+    color:var(--seconday-text);
+    background:var(--header-background);
+    padding:var(--spacing-small);
+    margin: var(--spacing-small);
+    border-radius: var(--border-radius-small);
+    text-align: center;
+}
+
+/*6.Dashboard Menu*/
+.dashboard-content{
+    padding: var(--spacing-medium);
+}
+
+.dashboard-content h2+p{
+    font-weight:bold;
+}
+
+.dashboard-content>section{
+    background:var(--content-background);
+    padding:var(--spacing-medium);
+    margin:var(--spacing-small);
+    box-shadow:var(--shadow-small);
+    border-radius:var(--border-radius-large);
+}
+
+/*7.Cards*/
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(100px,1fr));
+    gap:var(--spacing-medium);
+}
+
+.dashboard-card h3::before{
+	content:"|";
+	color:blue;
+}
+
+.dashboard-card{
+    background: var(--card-background);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-small);
+    transition:transform 0.3s ease,
+               box-shadow 0.3s ease;
+}
+
+.dashboard-card p{
+    font-style: italic;
+}
+
+.dashboard-card:hover{
+    transform: translate(-8px) scale(1.05) rotate(2deg);
+    box-shadow:var(--shadow-medium);
+}
+
+/*8.Button*/
+button{
+    background: var(--button-background);
+    padding: var(--spacing-small);
+    color:var(--seconday-text);
+    border: none;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+button::after{
+	content:"-->";
+	color:white;
+}
+
+button:hover{
+    background: var(--button-hover-background);
+    transform: translate(-4px) scale(1.05);
+}
+
+/*9.Users*/
+.dashboard-users__title::first-letter{
+	color:red;
+	font-style:bold;
+}
+
+.dashboard-users li{
+    max-width:160px;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-small);
+	padding:var(--spacing-small);
+	margin:var(--spacing-small);
+}
+.dashboard-users li:nth-child(odd){
+    background:gray;
+}
+
+span:is(.status-active){
+	border:2px solid green;
+	color:green;
+	border-radius:4px;
+	padding:4px;
+}
+
+span:is(.status-pending){
+	border:2px solid orange;
+	color:orange;
+	border-radius:4px;
+	padding:4px;
+}
+
+/*10.Activity*/
+.dashboard-activity{
+	max-width:300px;
+	padding:var(--spacing-medium);
+	
+	animation:sliding 5s ease infinite alternate;
+}
+
+/*11.Contact form*/
+input{
+	display:block;
+	width:100%;
+	padding:8px;
+	margin:8px 0 15px;
+	border:1px solid gray;
+	border-radius:var(--border-radius-small);
+}
+
+input:focus{
+	background:gray;
+}
+
+input[type="email"]{
+	border:1px solid blue;
+}
+
+/*12.media*/
+@media (max-width:760px){
+	.dashboard{
+		grid-template-columns:1fr;
+	}
+	.dashboard-cards{
+		grid-template-columns:1fr;
+	}
+}
+
+@keyframes sliding{
+	0%{
+		transform:translate(0);
+		background:blue;
+	}
+	100%{
+		transform:translate(300px);
+		background:red;
+	}
+}

@@ -1,0 +1,40 @@
+.Details{
+    background-color: #141b73;
+    text-align: center;
+    color: white;
+    img{
+        height: 225spx;
+        width:225px;
+    }
+}
+.Lists{
+    .SocialMedia{
+        position:static;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        height: 75px;
+        width:150px;
+    }
+}
+table,th,td{
+    border:1px solid black;
+    border-radius: 5px;
+}
+.box{
+    border:8px solid red;
+    height: 100px;
+    width:350px;
+    text-align:center;
+    padding:20px;
+}
+.heading{
+    font-size:small;
+    color:aqua;
+
+}
+.Client{
+    position:relative;
+    left:30vw;
+    right:30vw;
+}

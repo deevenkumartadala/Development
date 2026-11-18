@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Variables</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="dashboard-header">
+            <h1 class="dashboard-header__title">Admin Dashboard</h1>
+        </header>
+
+        <main class="dashboard" id="dashboard">
+
+            <aside class="dashboard-sidebar">
+                <nav>
+                    <a href="#menu">Menu</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#users">Users</a>
+                    <a href="#products">Products</a>
+                    <a href="#Settings">Settings</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </aside>
+
+            <section class="dashboard-content" id="menu">
+
+                <h2 class="dashboard-cards__title">Overview</h2>
+                <p>of Company</p>
+
+                <section class="dashboard-cards">
+                    
+                    <article class="dashboard-card">
+                        <h3 class="dashboard-card__title">Total Users</h3>
+                        <p class="dashboard-card__info">1,250</p>
+                        <button class="dashboard-card__button">View details</button>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3 class="dashboard-card__title">Total Products</h3>
+                        <p class="dashboard-card__info">450</p>
+                        <button class="dashboard-card__button">View details</button>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3 class="dashboard-card__title">Total Sales</h3>
+                        <p class="dashboard-card__info">₹85,000</p>
+                       <button class="dashboard-card__button">View details</button>
+                    </article>
+
+                </section>
+
+                <section class="dashboard-users" id="users">
+                    <h2 class="dashboard-users__title">Recent Users</h2>
+
+                    <ul class="dashboard-users__ulist">
+
+                        <li class="dashboard-users__listitem">
+                            <span class="dashboard-users__name">Ravi</span>
+                            <span class="status-active">Active</span>
+                        </li>
+
+                        <li class="dashboard-users__listitem">
+                            <span class="dashboard-users__name">Arun</span>
+                            <span class="status-pending">Pending</span>
+                        </li>
+
+                        <li class="dashboard-users__listitem">
+                            <span class="dashboard-users__name">Kiran</span>
+                            <span class="status-active">Active</span>
+                        </li>
+
+                    </ul>
+                </section>
+
+                <section class="dashboard-activity" id="dashboard-id" style="background: blue;">
+                    <h2 class="dashboard-activity__title">Recent Activity</h2>
+                    <p class="dashboard-activity__info">User registered successfully.</p>
+                    <p class="dashboard-activity__info">Products added.</p>
+                    <p class="dashboard-activity__info">Orders completed.</p>
+                </section>
+
+                <section class="dashboard-contact" id="contact">
+                    <form class="dashboard-contact__form">
+                        <label for="name">Name:</label>
+                        <input id="name" name="name" type="text" placeholder="Your Name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input id="email" name="email" type="email" placeholder="Your Email Address" required>
+                        
+                        <label for="phonenumber">Contact Number:</label>
+                        <input id="phonenumber" name="phonenumber" type="tel" placeholder="Your Contact Number">
+                    </form>
+                </section>
+
+            </section>
+
+        </main>
+        
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid Dashboard</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <h1>Admin Dashboard</h1>
+        </header>
+
+        <main class="dashboard">
+
+            <aside class="sidebar">
+                <p>Menu</p>
+                <p>Dashboard</p>
+                <p>Users</p>
+                <p>Products</p>
+                <p>Settings</p>
+            </aside>
+
+            <section class="main-content">
+
+                <h2>Overview</h2>
+
+                <div class="cards">
+                    
+                    <article class="card">
+                        <h3>Total Users</h3>
+                        <p>1,250</p>
+                        <div class="load">
+                            <button>View details</button>
+                            <span class="loading-spinner"></span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3>Total Products</h3>
+                        <p>450</p>
+                        <div class="load">
+                            <button>View details</button>
+                            <span class="loading-spinner"></span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3>Total Sales</h3>
+                        <p>₹85,000</p>
+                        <div class="load">
+                            <button>View details</button>
+                            <span class="loading-spinner"></span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="loader"></div>
+
+                <section class="activity">
+                    <h2>Recent Activity</h2>
+                    <p>User registered successfully.</p>
+                    <p>Products added.</p>
+                    <p>Orders completed.</p>
+                </section>
+
+            </section>
+
+        </main>
+        
+    </body>
+</html>
