@@ -12,61 +12,161 @@ let student={
 		City:"Rajahmundry",
 		State:"Andhra Pradesh",
 		Pincode:533125
+	},
+	studentProfile(){
+		let pass=0;
+		let total=0;
+		let Grade;
+		for (let mark of this.Marks){
+			total+=mark;
+			if (mark>=35){
+				pass++;
+			}
+		}
+		let average=total/this.Marks.length;
+		if (pass===this.Marks.length){
+			pass=true;
+			if (average>=90){
+				Grade="A";
+			}else if(average>=80){
+				Grade="B";
+			}else if(average>=70){
+				Grade="C";
+			}else{
+				Grade="D";
+			}
+		}else{
+			pass=false;
+		}
+		return [total,average,pass,Grade];
 	}
 };
 
+for (let info in student){
+	if (typeof student[info]==="function"){
+		let result=student[info]();
+		for (let i of result){
+			console.log(i);
+		}
+	}else{
+		console.log(info,student[info]);
+	}
+}
+
+
 'Challenges'
 'Challenge1'
-numbers=[5,10,15,20,25,30];
-newnumbers=numbers.map(num=>num*2);
-console.log(newnumbers);
-console.log(newnumbers.filter(num=>num>30));
+let car={
+	brand:"Mahindra",
+	model:"Bolero Camper",
+	year:2020,
+	color:"Burgandy"
+};
+console.log(car.brand);
+console.log(car.model);
+console.log(car.year);
+console.log(car.color);
 
 'Challenge2'
-names=["rahul","priya","deeven","anjali","karthik"];
-newnames=names.map(name=>name.toUpperCase());
-console.log(newnames.filter(name=>name.length>5));
-console.log(newnames.find(name=>name.length===6));
+let person={
+	name:"Deeven",
+	age:22,
+	city:"Rajahmundry",
+	state:"Andhra Pradesh",
+};
+person.country="India";
+person.age=23;
+delete person.city;
+console.log(person);
 
 'Challenge3'
-let prices=[100,250,400,800,1200,50,600];
-console.log(prices.filter(price=>price>500));
-console.log(prices.some(price=>price>1000));
-console.log(prices.every(price=>price>50));
-console.log(prices.find(price=>price>300));
+let product = {
+    name: "Mobile",
+    price: 25000,
+    brand: "Samsung"
+};
+
+let property = "price";
+console.log(product[property]);
 
 'Challenge4'
-marks=[25,45,60,32,90,18,55,35,100];
-pass=marks.filter(mark=>mark>=35);
-fail=marks.filter(mark=>mark<35);
-let newmarks=marks.map(mark=>mark+5);
-console.log(pass);
-console.log(fail);
-console.log(newmarks);
-console.log(marks.every(mark=>mark>35));
-console.log(marks.some(mark=>mark===100));
+let nestedObj={
+	name:"Deeven",
+	phonenum:"6304437717",
+	address:{
+		city:"Rajahmundry",
+		state:"Andhra Pradesh"
+	}
+}
+console.log(nestedObj.address.city);
+console.log(nestedObj.address.state);
 
 'Challenge5'
-let products=[150,500,750,100,1200,350,900];
-console.log(products.find(product=>product>700));
-console.log(products.findIndex(product=>product>700));
-console.log(products.filter(product=>product>=300 && product<=900));
-console.log(products.every(product=>product>0));
+let calculator={
+	num1:21,
+	num2:4,
+	add(){
+		return this.num1+this.num2;
+	},
+	subtract(){
+		return this.num1-this.num2;
+	},
+	multiply(){
+		return this.num1*this.num2;
+	},
+	divide(){
+		return this.num1/this.num2;
+	}
+};
+console.log(calculator.add());
+console.log(calculator.subtract());
+console.log(calculator.multiply());
+console.log(calculator.divide());
 
 'Challenge6'
-numbers = [10,15,20,25,30,35,40,45];
-newnumbers=numbers.filter(num=>num>20);
-console.log(newnumbers);
-newnumbers=newnumbers.map(num=>num*3);
-console.log(newnumbers);
-console.log(newnumbers.filter(num=>num>100));
+let employee = {
+    name: "Ravi",
+    department: "IT",
+    salary: 35000,
+    experience: 2
+};
+for (let info in employee){
+	console.log(info);
+	console.log(employee[info]);
+	console.log(info,employee[info]);
+}
 
 'Challenge7'
-function analyzeNumbers(numbers){
-	let filteredNumbers=numbers.filter(num=>num%2===0);
-	let squareNumbers=filteredNumbers.map(num=>num*num);
-	let great50=numbers.some(num=>num>50);
-	let allPositve=numbers.every(num=>num>0);
-	return [filteredNumbers,squareNumbers,great50,allPositve];
+let products=[
+	mobile={
+		name:"vivo v23",
+		price:34999,
+		stock:10
+	},
+	tablet={
+		name:"samsung tab",
+		price:24999,
+		stock:4
+	},
+	laptop={
+		name:"lenovo LOQ",
+		price:64999,
+		stock:2
+	}
+];
+let totalPrice=0;
+let mostExpensiveProductPrice=0;
+let mostExpensiveProduct;
+for (let product of products){
+	console.log(product.name);
+	totalPrice+=product.price*product.stock;
+	if (product.price>mostExpensiveProductPrice){
+		mostExpensiveProduct=product.name;
+	}
+	if (product.stock>0){
+		console.log(product.name);
+	}
 }
-console.log(analyzeNumbers([10,15,20,55,8,60,3]));
+console.log(totalPrice);
+
+console.log(mostExpensive);
