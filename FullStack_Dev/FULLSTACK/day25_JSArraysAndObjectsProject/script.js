@@ -102,7 +102,7 @@ console.log(employeeGreat30K);
 
 'Challenge3'
 let updatedPrices=products.map(product=>({
-	...products,
+	...product,
 	price:product.price*1.10
 }));
 console.log(updatedPrices);
